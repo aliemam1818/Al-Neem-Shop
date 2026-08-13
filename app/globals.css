@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ivory text-charcoal font-body antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+  ::selection {
+    @apply bg-gold/30;
+  }
+  :focus-visible {
+    outline: 2px solid #C6A15B;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-olive px-7 py-3 text-sm tracking-wide text-ivory transition hover:bg-olive-dark disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-gold-gradient px-7 py-3 text-sm tracking-wide text-olive-dark font-semibold shadow-gold transition hover:brightness-105 disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-olive/30 px-7 py-3 text-sm tracking-wide text-olive transition hover:border-olive hover:bg-olive/5;
+  }
+  .input-field {
+    @apply w-full rounded-lg border border-olive/20 bg-white px-4 py-2.5 text-sm text-charcoal placeholder:text-charcoal/40 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition;
+  }
+  .label-eyebrow {
+    @apply text-xs uppercase tracking-[0.25em] text-gold-dark font-semibold;
+  }
+  .card {
+    @apply bg-white rounded-2xl shadow-card border border-olive/5;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
